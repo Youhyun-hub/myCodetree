@@ -6,7 +6,7 @@ def valid_date(y, m, d):
     elif m in [4, 6, 9, 11]:
         max_d = 30
     elif m == 2:
-        if y % 4 == 0 or (y % 4 == 0 and y % 100 != 0) or (y % 4 == 0 and y % 100 == 0 and y % 400 == 0):
+        if (y % 4 == 0 and y % 100 != 0) or (y % 400 == 0):
             max_d = 29
         else:
             max_d = 28

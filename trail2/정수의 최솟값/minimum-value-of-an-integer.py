@@ -6,7 +6,7 @@ def min_val(i, j, k):
         min_v = i
     elif i > j and j < k:
         min_v = j
-    else:
+    elif i > k and j > k:
         min_v = k
     return min_v
 

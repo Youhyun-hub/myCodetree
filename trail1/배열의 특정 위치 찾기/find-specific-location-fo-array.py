@@ -9,7 +9,8 @@ for i in range(len(arr)):
 
     elif (i + 1) % 3 == 0:
         v.append(i)
-        a += arr[i]
-        a = a / len(v)
+        for j in v:
+            a += arr[j]
+            a = a / len(v)
 
 print(s, a)    

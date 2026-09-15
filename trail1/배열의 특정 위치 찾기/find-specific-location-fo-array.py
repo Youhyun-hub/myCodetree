@@ -16,4 +16,4 @@ for j in v:
 
 a = a / len(v)
 
-print(s, a)
+print(s, f"{a.1f}")

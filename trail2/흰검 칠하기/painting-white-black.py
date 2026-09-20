@@ -14,39 +14,35 @@ tile = [0] * (2*sum(x)+1) # 타일의 현재 색만 담음
 # 색을 칠할때마다 카운트
 white = [0] * (2*sum(x)+1)  # 흰색
 black = [0] * (2*sum(x)+1)  # 검은색
-# gray = [0] * (2*sum(x)+1) 
 
 
 for i in range(n):
     if dir[i] == "L":  # 왼쪽
         start = cur
-        end = cur - x[i]
+        end = cur - x[i] + 1
         cur = end
-        for j in range(min(start, end), max(start, end)):
+        for j in range(min(start, end), max(start, end)+1):
             idx = j + sum(x)
+            white[idx] += 1  # 누적 칠해진 카운트
             # 각 두번 이상 나오지 않으면
             if white[idx] >= 2 and + black[idx] >= 2:
                 tile[idx]= "gray"
-                # gray[idx] += 1
             else:
                 tile[idx] = "white" # 현재 타일 색
-                white[idx] += 1  # 누적 칠해진 카운트
-                
-               
 
     else:  # 오른쪽
         start = cur
-        end = cur + x[i]
+        end = cur + x[i] - 1
         cur = end
-        for j in range(min(start, end), max(start, end)):
+        for j in range(min(start, end), max(start, end)+1):
             idx = j + sum(x)
+            black[idx] += 1  # 누적 칠해진 카운트
             # 각 두번 이상 나오지 않으면
             if white[idx] >= 2 and + black[idx] >= 2:
                 tile[idx]= "gray"
-                # gray[idx] += 1   
             else:
                 tile[idx] = "black" # 현재 타일 색
-                white[idx] += 1  # 누적 칠해진 카운트
+                
 
 
 # for i in range(n):

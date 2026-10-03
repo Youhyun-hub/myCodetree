@@ -11,3 +11,4 @@ for i in range(n-1, -1, -1):
         print(" ", end="")
     for _ in range(2*i-1):
         print("*", end="")
+    print()

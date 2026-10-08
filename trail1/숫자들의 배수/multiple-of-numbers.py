@@ -7,6 +7,6 @@ for i in range(1, n*5*2):
     mul.append(i*n)
     if i*n % 5 == 0:
         cnt += 1
-    if cnt == 2:
-        break
+        if cnt == 2:
+            break
 print(*mul)

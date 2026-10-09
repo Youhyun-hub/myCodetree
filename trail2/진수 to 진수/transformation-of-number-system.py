@@ -11,7 +11,7 @@ n = list(map(int, input()))
 num = 0  # a진수 -> 10진수
 
 for i in range(len(n)):
-    num = num * a + 1
+    num = num * a + n[i]
 
 digits = []
 while num > 0:

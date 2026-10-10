@@ -17,13 +17,11 @@ grid = [list(input().split()) for _ in range(R)]
 
 cnt = 0  # 경우의 수
 
-for r in range(R):  # 첫 위치
-    for c in range(C):
+for r in range(1, R-2):  # 첫 위치 (경유 3번)
+    for c in range(1, C-2):
         for p in range(r+1, R-1):  # 두번 째 위치
             for q in range(c+1, C-1):
                 if grid[0][0] != grid[r][c] and grid[r][c] != grid[p][q] and grid[p][q] != grid[R-1][C-1]:
-                    cnt += 1
-
-                           
+                    cnt += 1                
 print(cnt)
                 

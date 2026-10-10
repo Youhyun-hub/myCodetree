@@ -15,7 +15,7 @@ for i in range(n):
         for k in range(j, j+3):
             if grid[i][k] == 1:
                 cnt += 1
-    if max_cnt < cnt:
-        max_cnt = cnt
+        if max_cnt < cnt:
+            max_cnt = cnt
 
 print(max_cnt)

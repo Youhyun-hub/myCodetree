@@ -25,3 +25,18 @@ for i in open:
             ans.append((i, j))
 
 print(len(ans))
+
+'''
+# 문자열을 입력받고 그 길이를 구합니다.
+string = input()
+n = len(string)
+
+# 가능한 모든 위치 쌍을 확인하며 조건을 만족하는 쌍의 개수를 셉니다.
+cnt = 0
+for i in range(n):
+    for j in range(i + 1, n):
+        if string[i] == '(' and string[j] == ')':
+            cnt += 1
+            
+print(cnt)
+'''

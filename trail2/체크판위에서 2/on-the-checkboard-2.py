@@ -2,6 +2,7 @@
 R×C 크기인 직사각형의 각 칸이 ′W′, ′B′로 표현되어 있습니다.  
 ′W′는 하얀색으로, ′B′는 검은색으로 칸이 채워져 있는것을 뜻합니다.
 왼쪽 상단에서 출발하여 우측 하단으로 이동할 때, 특정 룰을 만족하면서 이동에 성공할 수 있는 경우의 수를 구하는 프로그램을 작성해보세요. 아래가 특정 룰입니다.
+
 1. 이동은 항상 점프를 통해서만 가능합니다.
 또, 점프 진행시 항상 현재 위치에 적혀있는 색과, 점프한 이후의 칸에 적혀있는 색이 달라야만 합니다.
 
@@ -15,16 +16,14 @@ R, C = map(int, input().split())
 grid = [list(input().split()) for _ in range(R)]
 
 cnt = 0  # 경우의 수
-cur = grid[0][0]  # 현재 색
-for r in range(R):
+
+for r in range(R):  # 첫 위치
     for c in range(C):
-        if grid[r][c] != cur:  # 현재 색과 다른 색을 만나면 경우의 수 증가
-            cur = grid[r][c]
-            cnt += 1
-        
-        if r == R-1 and c == C-1:  # 마지막 위치의 값은 경우의 수에서 빼줌
-            cnt -= 1
-            break
-    
+        for p in range(r+1, R-1):  # 두번 째 위치
+            for q in range(c+1, C-1):
+                if grid[0][0] != grid[r][c] and grid[r][c] != grid[p][q] and grid[p][q] != grid[R-1][C-1]:
+                    cnt += 1
+
+                           
 print(cnt)
                 

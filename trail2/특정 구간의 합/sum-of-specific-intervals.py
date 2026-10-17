@@ -10,7 +10,7 @@ arr = list(map(int, input().split()))
 queries = [tuple(map(int, input().split())) for _ in range(m)]
 
 
-def get_sum(arr):
+def get_sum():
     for a, b in queries:
         total = 0
         for i in range(a-1, b):
@@ -18,4 +18,4 @@ def get_sum(arr):
         print(total)
     return total
 
-get_sum(arr)
+get_sum()

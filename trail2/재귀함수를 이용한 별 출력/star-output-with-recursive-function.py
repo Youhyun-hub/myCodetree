@@ -10,8 +10,7 @@ def print_star(n):
         return
     
     print_star(n-1)
-    print("*" * n, end = "")
-    print()
-    
+    print("*" * n)
+   
 
 print_star(n)

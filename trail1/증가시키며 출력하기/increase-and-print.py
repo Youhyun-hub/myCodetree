@@ -1,0 +1,1 @@
+print(*[_ for _ in range(5, 18, 2)])

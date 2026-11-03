@@ -3,7 +3,7 @@ cnt = 0  # 사람 수
 
 while True:
     n = int(input())
-    if n < 30:
+    if n < 30 and n >= 20:
         sum_v += n
         cnt += 1
     else:

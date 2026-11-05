@@ -6,11 +6,13 @@
 num = list(map(int, input().split()))
 
 sum_v = 0
-cnt = -1
+cnt = 0
 for i in num:
     sum_v += i
     cnt += 1
+
     if i == 0:
+        cnt -= 1
         break
 
 print(sum_v, f"{sum_v/cnt:.1f}")

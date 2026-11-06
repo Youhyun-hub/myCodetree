@@ -1,15 +1,24 @@
+'''
+N개의 정수가 주어졌을 때, 중복하여 등장하지 않는 정수 중 최댓값을 구하는 프로그램을 작성해보세요.
+'''
+
 n = int(input())
-nums = list(map(int, input().split()))
-max_v = 0
-cnt = 0
+num = list(map(int, input().split()))
+max_v = max(num)
+cnt = 0  # 중복 횟수
 
-for num in nums:
-    if max_v < num:
-        max_v = num
+num.sort()
 
-    elif max_v == num:   # 중복 발생시
-        max_v = -1  # -1을 출력
+for i in range(n):
+    if num[i] == max_v:
+        max_idx = i
         break
-    else:  # 중복이 없으면
-        continue
+
+if num.count(max_v) > 1:
+    max_v = max(num[:max_idx])
+
+if num.count(max_v) > 1:
+    max_v = -1
+        
+
 print(max_v)

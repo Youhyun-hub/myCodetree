@@ -7,6 +7,8 @@ arr = list(map(int, input().split()))
 cnt = [0] * 10
 
 for i in range(len(arr)):
+    if arr[i] == 0:
+        break
     cnt[arr[i] // 10] += 1
 
 for i in range(1, 10):

@@ -15,4 +15,8 @@ for i in range(n-1):
             rest.append(price[j] - price[i])
         else:
             rest.append(0)  # 0을 최대값으로 갖도록 함
+
+if n == 1:  # 정보가 1년뿐이라면
+    rest.append(0)
+
 print(max(rest))            

@@ -9,16 +9,13 @@ cnt = 0  # 중복 횟수
 
 num.sort()
 
+ans = []
 for i in range(n):
-    if num[i] == max_v:
-        max_idx = i
-        break
+    if num.count(num[i]) == 1:  # count가 하나뿐이면
+        ans.append(num[i])
+    else:
+        ans.append(-1)
 
-if num.count(max_v) > 1:
-    max_v = max(num[:max_idx])
 
-if num.count(max_v) > 1:
-    max_v = -1
-        
 
-print(max_v)
+print(max(ans))

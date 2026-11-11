@@ -7,7 +7,9 @@ for i in range(n-1):
     if arr[i] < arr[i+1]:
         cnt += 1
     else:
+        max_cnt = max(max_cnt, cnt)
         cnt = 1
-    max_cnt = max(max_cnt, cnt)
-    
+
+max_cnt = max(max_cnt, cnt)
+
 print(max_cnt)

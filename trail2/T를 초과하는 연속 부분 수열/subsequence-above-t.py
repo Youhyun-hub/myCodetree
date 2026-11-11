@@ -5,7 +5,7 @@ max_cnt = 0
 cnt = 0
 
 for i in range(n):
-    if arr[i] > 3:
+    if arr[i] > t:
         cnt += 1
 
     else:

@@ -15,21 +15,13 @@ month = {
     11: 30,
     12: 31,
 }
+
 if m2 - m1 > 0:  # 비교 날짜가 같지 않아야 함
     diff = d2 + month[m1] - d1 + 1
     if m2 - m1 > 1:  # 상동
         for i in range(m1+1, m2):
-            diff += i
+            diff += month[i]
 else:
     diff = 1
-# if d2 - d1 < 0:  # 날짜의 차가 음수
-#     diff = d2 + month[m1] - d1 + 1
-#     if m2 - m1 > 1:
-#         for i in range(m1+1, m2):
-#             diff += i
-# else:  # 날짜의 차가 0 이상
-#     diff = d2 + month[m1] - d1 + 1
-#     for i in range(m1+1, m2):
-#             diff += i
 
 print(diff)

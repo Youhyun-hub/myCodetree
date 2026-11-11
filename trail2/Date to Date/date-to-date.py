@@ -31,3 +31,31 @@ else:
     diff = d2 - d1 + 1
 
 print(diff)
+
+'''
+[코트트리 풀이]
+# 변수를 선언하고 입력을 받습니다.
+m1, d1, m2, d2 = tuple(map(int, input().split()))
+
+
+def num_of_days(m, d):
+    # 계산 편의를 위해 각 달에 며칠이 있는지를 적어줍니다.
+    days = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+    total_days = 0
+
+    # 1월부터 (m - 1)월까지는 전부 꽉 채워져 있습니다.
+    for i in range(1, m):
+        total_days += days[i]
+
+    # m월의 경우에는 정확히 d일만 있습니다.
+    total_days += d
+
+    return total_days
+
+
+# 결과를 출력합니다.
+total_days = num_of_days(m2, d2) - num_of_days(m1, d1) + 1
+print(total_days)
+
+
+'''

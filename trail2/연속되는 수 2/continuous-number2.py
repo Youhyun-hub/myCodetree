@@ -6,9 +6,18 @@ N개의 정수가 주어졌을 때,
 n = int(input())
 arr = [int(input()) for _ in range(n)]
 
-cnt = 1
-for i in range(n-1):
-    if arr[i] == arr[i+1]:
-        cnt += 1
+max_v = 0
 
-print(cnt)
+for i in range(n):
+    cnt = 0
+
+    for j in range(i, n):
+        if arr[i] == arr[j]:
+            cnt += 1
+        else:
+            break
+
+    if max_v < cnt:
+        max_v = cnt
+
+print(max_v)

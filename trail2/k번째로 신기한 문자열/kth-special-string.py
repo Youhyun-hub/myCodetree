@@ -9,7 +9,7 @@ str.sort()  # 사전 순 정렬
 
 ans = []  # 조건 만족 리스트
 for i in range(n):
-    if t in str[i]:
+    if t in str[i][:len(t)]:
         ans.append(str[i])
 
-print(ans[2])
+print(ans[k-1])

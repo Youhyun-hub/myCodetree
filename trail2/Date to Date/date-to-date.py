@@ -22,6 +22,6 @@ if m2 - m1 > 0:  # 비교 날짜가 같지 않아야 함
         for i in range(m1+1, m2):
             diff += month[i]
 else:
-    diff = 1
+    diff = d2 - d1 + 1
 
 print(diff)

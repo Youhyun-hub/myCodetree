@@ -17,3 +17,19 @@ elif a >= 11:  # 11일 이후
         diff = c - 11 + ((b - 11) * 60) + ((a - 11) * 1440)
 
 print(diff)
+
+'''
+[코트트리 풀이]
+# 변수 선언 및 입력
+a, b, c = tuple(map(int, input().split()))
+
+# 차이를 계산합니다.
+diff = (a * 24 * 60 + b * 60 + c) - (11 * 24 * 60 + 11 * 60 + 11)
+
+# 출력
+if diff < 0:
+    print(-1)
+else:
+    print(diff)
+
+'''

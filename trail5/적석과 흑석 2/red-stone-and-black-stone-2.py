@@ -14,21 +14,21 @@ heap = []
 j = 0 # 포인터
 count = 0
 for t in T:
-    # TODO 1: A <= t 인 검은 돌의 B를 heap에 넣기 (포인터 j 사용)
+    # A <= t 인 검은 돌의 B를 heap에 넣기 (포인터 j 사용)
     while j < len(AB) and A[j] <= t:
         heapq.heappush(heap, B[j])
         j += 1
-    # TODO 2: heap 맨 위의 B가 t보다 작으면 버리기 (반복)
+    # heap 맨 위의 B가 t보다 작으면 버리기 (반복)
     while heap and heap[0] < t:
         heapq.heappop(heap)
-    # TODO 3: heap에 남은 게 있으면 하나 꺼내고 count += 1
+    #  heap에 남은 게 있으면 하나 꺼내고 count += 1
     if heap:
         heapq.heappop(heap)
         count += 1
 
 print(count)
 
-''' 런타임 초과되는 코드
+'''  초과되는 코드
 visit = [0] * N  # 검은 돌 사용 여부
 for red in range(C):
     select = -1
